@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>通过此页面可重定向至node-art主页</h3>
+    <p>点击下面重定向按钮进行重定向</p>
+    <p>👇</p>
+    <form action="/redirect" method="GET">
+      <input type="submit" value="重定向" id="submit" />
+    </form>
+    <h3 id="tips" style="display: none">3s后将进行重定向node-art主页</h3>
+    <br />
+    <button id="jump_to">直接跳转</button>
+    <script>
+      const submitBtn = document.getElementById("submit");
+      const tips = document.getElementById("tips");
+      const jumpToBtn = document.getElementById("jump_to");
+      submitBtn.onclick = () => {
+        tips.style.display = "block";
+      };
+      jumpToBtn.onclick = () => {
+        window.location = "/";
+      };
+    </script>
+  </body>
+</html>

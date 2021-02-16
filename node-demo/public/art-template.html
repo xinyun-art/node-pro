@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    {{include path + "/template/header.html"}}
+    <!-- {{a + b}} 并列输出 -->
+    <h3>{{intro + start + '!!'}}</h3>
+    <p>{{start}}</p>
+    <p>👇</p>
+    <a href="https://aui.github.io/art-template/zh-cn/docs/index.html">{{linkTo}}</a>
+    <p>在这里，列出你所知道的其他一些模板引擎。。。</p>
+    <p>
+      {{each options}}
+      <a href="{{$value.url}}"><strong>{{$value.name}}</strong></a>
+      {{/each}}
+    </p>
+    <p>{{if open}} 为自己👍 {{else if !open}} 为他人👍 {{/if}}</p>
+    <p><% if(open) { %> 为自己👍 <% } else if(!open) {%> 为他人👍 <% } %></p>
+    <!-- 原文输出 -->
+    <p>{{@ html}}</p>
+    <p>{{ path }}</p>
+    {{include path + "/template/footer.art"}}
+  </body>
+</html>
